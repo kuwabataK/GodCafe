@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'user/index/' =>'user#index'
+  get 'coffeebeans/index' =>'coffee_beans#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
