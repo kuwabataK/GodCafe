@@ -1,0 +1,12 @@
+<h1>好みのフレーバーの登録</h1>
+<%= form_for @flavor,:url => {:action => :create} do |form| %>
+酸味</br>
+<%= form.text_field :sourness %></br>
+コク</br>
+<%= form.text_field :body %></br>
+苦味</br> 
+<%= form.text_field :bitterness %></br>
+<div class="submit">
+<%= form.submit '登録'%>
+</div>
+<% end %>
