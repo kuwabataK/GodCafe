@@ -26,9 +26,9 @@ class FlavorController < ApplicationController
 
  def cal_brend
     @flavor = Flavor.new
-    @flavor.sourness = 5
-    @flavor.body = 5
-    @flavor.bitterness = 5
+    @flavor.sourness = params[:flavor][:sourness]
+    @flavor.body = params[:flavor][:body]
+    @flavor.bitterness = params[:flavor][:bitterness]
     @blend_val = Flavor.calc_brend(@flavor)
  end
 

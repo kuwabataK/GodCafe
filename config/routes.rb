@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get 'coffeebeans/index' =>'coffee_beans#index'
   get 'flavor/index' =>'flavor#index'
   get 'flavor/new' =>'flavor#new'
-  post 'flavor/new' =>'flavor#create'
-  get 'flavor/cal_brend' => 'flavor#cal_brend'
-  root 'flavor#index'
+  post'flavor/new' => 'flavor#cal_brend'
+  post 'flavor/cal_brend' => 'flavor#cal_brend'
+  root 'flavor#new'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

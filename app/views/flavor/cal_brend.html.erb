@@ -1,3 +1,27 @@
-<h1>あなたにおすすめの豆は</h1>
 
-<%= @blend_val  %>
+
+<h1>おすすめのブレンドは</h1>
+
+<div id="myfirstchart" style="height: 400px;"></div>
+<div id="blend_key"><%= @blend_val.keys.join(",") %></div>
+<div id="blend_val"><%= @blend_val.values.join(",") %></div>
+<script>
+var beans = new Array();
+var blend_keys = $('#blend_key').text().split(",");
+var blend_values = $('#blend_val').text().split(",");
+$(function(){
+  for(var i=0; i<blend_keys.length; i++){
+  beans.push({label: blend_keys[i], value: blend_values[i]});
+  }
+console.log(beans);
+
+new Morris.Donut({
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point once
+  // the chart.
+  data: beans,
+  formatter: function (x) { return x + "%"}
+});
+});
+
+</script>
