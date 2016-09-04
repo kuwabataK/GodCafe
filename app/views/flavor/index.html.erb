@@ -1,0 +1,22 @@
+<h1>あなたの好みのブレンド</h1>
+
+<table class="table table-striped table-border table-hover table-condensed">
+<tr>
+  <th>酸味</th>
+  <th>コク</th>
+  <th>苦味</th>
+</tr>
+<tr>
+<% @flavors.each do |flavor| %>
+<td>
+<%= flavor.sourness %>
+</td>
+<td>
+<%= flavor.body %>
+</td>
+<td>
+<%= flavor.bitterness %>
+</td>
+</tr>
+<% end %>
+</table>

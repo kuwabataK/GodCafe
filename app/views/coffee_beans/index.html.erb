@@ -1,0 +1,26 @@
+<h1>コーヒー豆一覧</h1>
+
+<table class="table table-striped table-border table-hover table-condensed">
+<tr>
+  <th>品名</th>
+  <th>酸味</th>
+  <th>コク</th>
+  <th>苦味</th>
+</tr>
+<tr>
+<% @coffeebeans.each do |coffeebean| %>
+<td>
+<%= coffeebean.name %>
+</td>
+<td>
+<%= coffeebean.sourness %>
+</td>
+<td>
+<%= coffeebean.body %>
+</td>
+<td>
+<%= coffeebean.bitterness %>
+</td>
+</tr>
+<% end %>
+</table>

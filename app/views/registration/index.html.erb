@@ -1,0 +1,13 @@
+<h2>あなたのコーヒーの好みを以下から選択してください。</h2>
+<p>
+酸味</br>
+<%= select_tag 'flavor[sourness]', options_for_select(["1", "2", "3", "4"]) %></br>
+コク</br>
+<%= select_tag 'flavor[body]', options_for_select(["1", "2", "3", "4"]) %></br>
+苦味</br>
+<%= select_tag 'flavor[bitterness]', options_for_select(["1", "2", "3", "4"]) %></br>
+</p>
+
+<p>
+<button type="submit" class="btn btn-primary">Submit</button>
+</p>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sourness: 1
+  body: 1
+  bitterness: 1
+
+two:
+  sourness: 1
+  body: 1
+  bitterness: 1
