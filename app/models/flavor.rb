@@ -1,12 +1,26 @@
 class Flavor < ActiveRecord::Base
+  validate :check_flavor_value
+
+  def self.check_flavor_value(flavor)
+      if (flavor.sourness <= 0 || flavor.body <= 0 || flavor.bitterness <= 0)
+        flavor.errors.add(:error,"入力値が不正です。")
+      end
+  end
 
   def self.calc_brend(flavor)
+    check_flavor_value(flavor)
     candidate_beans = compare_beans(flavor)
     brend = candidate_beans
     idial_beans_val = brend.sort {|bean1, bean2| bean1[1] <=> bean2[1]}[0][1]
 
     opt_beans = extract_opt_beans(brend, idial_beans_val)
     ans = gen_graph_data(opt_beans)
+
+    if(flavor.errors.blank?)
+      return ans
+    else
+      return {}
+    end
     #brend.index(idial_beans_val
     #candidate_beans
   end
