@@ -56,6 +56,13 @@ Raphaël 2.1.0 - JavaScript Vector Library                          │ \\
   </div>
   <div id="content">
     <font face="arial black" size="5">
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
       <%= yield %>
     </font>
 

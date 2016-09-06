@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/index'
+  #root 'home#index'
   get 'user/index/' =>'user#index'
   get 'coffeebeans/index' =>'coffee_beans#index'
   get 'flavor/index' =>'flavor#index'

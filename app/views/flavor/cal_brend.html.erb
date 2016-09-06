@@ -1,10 +1,16 @@
 
 
 <h1>おすすめのブレンドは</h1>
+<% if @flavor.errors.any? %>
+<% @flavor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+<% end %>
+<% end %>
 
 <div id="myfirstchart" style="height: 400px;"></div>
 <div id="blend_key"><%= @blend_val.keys.join(",") %></div>
 <div id="blend_val"><%= @blend_val.values.join(",") %></div>
+redirect_to '/flavor/new'
 <script>
 var beans = new Array();
 var blend_keys = $('#blend_key').text().split(",");
