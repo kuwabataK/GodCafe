@@ -1,12 +1,26 @@
-<h1>好みのフレーバーの登録</h1>
-<%= form_for @flavor,:url => {:action => :cal_brend} do |form| %>
+<h2>好みのフレーバーの登録</h2>
+<div class="form-horizontal" role="form">
+<%= form_for @flavor,:url => {:action => :cal_brend} ,:html => { :class => 'form-horizontial' } do |form| %>
 酸味</br>
-<%= form.text_field :sourness %></br>
+<div class="form-group">
+  <div class="col-xs-5">
+<%= form.text_field :sourness,:class=>"form-control" %>
+</div>
+</div>
 コク</br>
-<%= form.text_field :body %></br>
+<div class="form-group">
+  <div class="col-xs-5">
+<%= form.text_field :body,:class=>"form-control" %>
+</div>
+</div>
 苦味</br>
-<%= form.text_field :bitterness %></br>
-<div class="submit">
-<%= form.submit '登録'%>
+<div class="form-group">
+  <div class="col-xs-5">
+<%= form.text_field :bitterness,:class=>"form-control" %></br>
+</div>
+</div>
+<div class="submit ">
+<p><%= form.submit '登録',class:"btn btn-primary btn-lg" %></p>
 </div>
 <% end %>
+</div>

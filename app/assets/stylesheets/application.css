@@ -13,4 +13,28 @@
  *= require_tree .
  *= require_self
  *= require bootstrap.min
+ *= require devise_bootstrap_views
  */
+ div#container {
+   margin:0 auto;
+   padding-top: 5px;
+   width:780px;
+ }
+ div#content {
+   margin-bottom: 500px;
+   float: left;
+   width:530px;
+   padding: 10px 10px 10px 0px;
+ }
+ div#sidebar {
+  float: left;
+  width: 240px; /* サイドバーの幅 */
+  padding: 5px;
+ }
+ div#footer {
+  margin-top:  700px;
+  background-color: black;
+  color: white;
+  padding: 3px;
+  text-align: center;
+ }

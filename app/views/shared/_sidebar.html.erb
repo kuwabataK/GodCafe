@@ -1,0 +1,8 @@
+  <div class="list-group">
+		<a href="#" class="list-group-item active">
+			<%= current_user.email %>
+		</a>
+  <%= link_to "Home",flavor_new_path , :class => "list-group list-group-item" %>
+	<%= link_to "Settings", edit_user_registration_path, :class => "list-group list-group-item" %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "list-group list-group-item" %>
+</div>

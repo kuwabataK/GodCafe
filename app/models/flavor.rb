@@ -5,10 +5,16 @@ class Flavor < ActiveRecord::Base
       if (flavor.sourness <= 0 || flavor.body <= 0 || flavor.bitterness <= 0)
         flavor.errors.add(:error,"入力値が不正です。")
       end
+      if(flavor.sourness == 0 || flavor.body == 0 || flavor.bitterness == 0)
+        return 0
+      end
   end
 
   def self.calc_brend(flavor)
     check_flavor_value(flavor)
+    if check_flavor_value(flavor) == 0
+      return {"泡盛"=>100}
+    end
     candidate_beans = compare_beans(flavor)
     brend = candidate_beans
     idial_beans_val = brend.sort {|bean1, bean2| bean1[1] <=> bean2[1]}[0][1]
