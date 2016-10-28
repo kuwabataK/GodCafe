@@ -1,24 +1,84 @@
 <h2>好みのフレーバーの登録</h2>
 <div class="form-horizontal" role="form">
 <%= form_for @flavor,:url => {:action => :cal_brend} ,:html => { :class => 'form-horizontial' } do |form| %>
-酸味</br>
+
+<%= form.select :sourness, options_for_select([
+  ["Select One", ""],
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5"]),
+  {}, { class: "form form-group form-control" } %>
+
+<%= form.select :body, options_for_select([
+  ["Select One", ""],
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5"]),
+  {}, { class: "form form-group form-control" } %>
+
+
+<%= form.select :bitterness, options_for_select([
+  ["Select One", ""],
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5"]),
+  {}, { class: "form form-group form-control" } %>
+
+
+
+
+
+
+
+<!--酸味</br>
 <div class="form-group">
   <div class="col-xs-5">
-<%= form.text_field :sourness,:class=>"form-control" %>
+  <select class="form-control" {:id => :sourness}>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3" selected>3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
 </div>
 </div>
+
 コク</br>
 <div class="form-group">
-  <div class="col-xs-5">
-<%= form.text_field :body,:class=>"form-control" %>
+  <div class="col-xs-10">
+<select class="form-control" {:id=> :body} >
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3" selected>3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
 </div>
 </div>
 苦味</br>
 <div class="form-group">
   <div class="col-xs-5">
-<%= form.text_field :bitterness,:class=>"form-control" %></br>
+  <select class="form-control" {:id =>:bitterness}>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3" selected>3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
 </div>
-</div>
+</div>!-->
 <div class="submit ">
 <p><%= form.submit '登録',class:"btn btn-primary btn-lg" %></p>
 </div>
