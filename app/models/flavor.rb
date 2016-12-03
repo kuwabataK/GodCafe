@@ -1,4 +1,6 @@
 class Flavor < ActiveRecord::Base
+  require 'json'
+  BEANS_DIVIDE_RATE = 25
   validate :check_flavor_value
 
   def self.check_flavor_value(flavor)
@@ -13,7 +15,7 @@ class Flavor < ActiveRecord::Base
   def self.calc_brend(flavor)
     check_flavor_value(flavor)
     if check_flavor_value(flavor) == 0
-      return {"泡盛"=>100}
+      return {"泡盛"=>100}.to_json
     end
     candidate_beans = compare_beans(flavor)
     brend = candidate_beans
@@ -85,9 +87,9 @@ class Flavor < ActiveRecord::Base
     end
 
     bean_histgram.each do |key, value|
-      bean_histgram[key] = value * 25
-  end
+      bean_histgram[key] = value * BEANS_DIVIDE_RATE
+    end
 
-  bean_histgram
-end
+    bean_histgram.to_json
+  end
 end

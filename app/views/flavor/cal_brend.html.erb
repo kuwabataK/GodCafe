@@ -3,19 +3,15 @@
 <h2>おすすめのブレンドは</h2>  
 
 <div id="myfirstchart" style="height: 400px;"></div>
-<div id="blend_key"><%= @blend_val.keys.join(",") %></div>
-<div id="blend_val"><%= @blend_val.values.join(",") %></div>
+<%= hidden_field_tag 'blend_val',@blend_val %>
 
 <script>
 var beans = new Array();
-var blend_keys = $('#blend_key').text().split(",");
-var blend_values = $('#blend_val').text().split(",");
+var blend_beans_with_blend_rate = JSON.parse($('#blend_val').val());
 $(function(){
-  for(var i=0; i<blend_keys.length; i++){
-  beans.push({label: blend_keys[i], value: blend_values[i]});
+  for(var blend_bean in blend_beans_with_blend_rate){
+    beans.push({label: blend_bean, value: blend_beans_with_blend_rate[blend_bean]});
   }
-console.log(beans);
-
 new Morris.Donut({
   element: 'myfirstchart',
   // Chart data records -- each entry in this array corresponds to a point once
@@ -24,5 +20,4 @@ new Morris.Donut({
   formatter: function (x) { return x + "%"}
 });
 });
-
 </script>
